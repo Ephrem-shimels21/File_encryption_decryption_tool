@@ -1,56 +1,94 @@
-import 'package:ed_tool_fronend/decryption.dart';
-import 'package:ed_tool_fronend/encryption.dart';
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import 'main_app.dart';
+
+void main() async {
+  await _initHive();
+  runApp(const MainApp());
+}
+
+Future<void> _initHive() async {
+  await Hive.initFlutter();
+  await Hive.openBox("login");
+  await Hive.openBox("accounts");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import 'package:ed_tool_fronend/decryption.dart';
 // import 'package:ed_tool_fronend/encryption.dart';
-import 'package:flutter/material.dart';
-void main(){
+// // import 'package:ed_tool_fronend/decryption.dart';
+// // import 'package:ed_tool_fronend/encryption.dart';
+// import 'package:flutter/material.dart';
+// void main(){
 
-  runApp(HomePage());
+//   runApp(HomePage());
 
-}
+// }
 
 
-class HomePage extends StatelessWidget{
+// class HomePage extends StatelessWidget{
 
-  Widget build (BuildContext context){
-    return  MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Encryption-Decryption-tool'),
-        ),
-        body: Center(
-          child: Row(
-            children: [
-              Padding(padding: EdgeInsets.all(40)),
-              Builder(
-                builder: (context) =>ElevatedButton(
-                // onPressed: Navigator.of(context).push(EncryptionPage()),
-                onPressed: (){
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => EncryptionPage()));
-                },
-                child: Text('Encryption'))),
-              Padding(padding:EdgeInsets.all(40)),
-              Builder(
-                builder: (context) => ElevatedButton(
-                child: Text('Decryption'),
-                // onPressed: Navigator.of(context).push(DcryptionPage())
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => decryptionPage() )
-                  );
-                }
+//   Widget build (BuildContext context){
+//     return  MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Encryption-Decryption-tool'),
+//         ),
+//         body: Center(
+//           child: Row(
+//             children: [
+//               Padding(padding: EdgeInsets.all(40)),
+//               Builder(
+//                 builder: (context) =>ElevatedButton(
+//                 // onPressed: Navigator.of(context).push(EncryptionPage()),
+//                 onPressed: (){
+//                   Navigator.push(
+//                     context, MaterialPageRoute(builder: (context) => EncryptionPage()));
+//                 },
+//                 child: Text('Encryption'))),
+//               Padding(padding:EdgeInsets.all(40)),
+//               Builder(
+//                 builder: (context) => ElevatedButton(
+//                 child: Text('Decryption'),
+//                 // onPressed: Navigator.of(context).push(DcryptionPage())
+//                 onPressed: () {
+//                   Navigator.push(
+//                     context,
+//                     MaterialPageRoute(builder: (context) => decryptionPage() )
+//                   );
+//                 }
 
-              )
-              )
-            ],
-          )
-        ),
-      ),
-      );
-  }
-}
+//               )
+//               )
+//             ],
+//           )
+//         ),
+//       ),
+//       );
+//   }
+// }
 
 
 

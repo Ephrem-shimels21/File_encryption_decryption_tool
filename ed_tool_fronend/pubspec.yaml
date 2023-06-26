@@ -41,6 +41,9 @@ dependencies:
   aes_crypt_null_safe: ^2.0.2
   firebase_core: ^2.14.0
   pkcs7: ^1.0.3
+  hive_flutter: ^1.1.0
+  http: ^1.0.0
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_test:
